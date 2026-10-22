@@ -1,0 +1,17 @@
+<section class="section page-width">
+  <div class="product-layout">
+    <div class="product-media-grid">{% for media in product.media %}{% case media.media_type %}{% when 'image' %}{{ media | image_url: width: 1400 | image_tag: widths: '500,750,1000,1400', loading: 'lazy', alt: media.alt | default: product.title | escape }}{% when 'video' %}{{ media | video_tag: controls: true, image_size: '1000x' }}{% when 'external_video' %}{{ media | external_video_tag }}{% endcase %}{% else %}{{ 'product-1' | placeholder_svg_tag }}{% endfor %}</div>
+    <div class="product-info"><p class="eyebrow">{{ product.vendor | escape }}</p><h1>{{ product.title | escape }}</h1><div>{% render 'price', product: product %}</div><div class="rte">{{ product.description }}</div>
+      {% form 'product', product, class: 'product-form' %}
+        {% unless product.has_only_default_variant %}<label for="VariantSelect-{{ section.id }}">Options</label><select id="VariantSelect-{{ section.id }}" name="id">{% for variant in product.variants %}<option value="{{ variant.id }}"{% if variant == product.selected_or_first_available_variant %} selected{% endif %}{% unless variant.available %} disabled{% endunless %}>{{ variant.title | escape }} — {{ variant.price | money }}{% unless variant.available %} (Sold out){% endunless %}</option>{% endfor %}</select>{% else %}<input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">{% endunless %}
+        <label for="Quantity-{{ section.id }}">Quantity</label><input id="Quantity-{{ section.id }}" data-quantity type="number" name="quantity" min="1" value="1">
+        <button class="button" type="submit" name="add"{% unless product.selected_or_first_available_variant.available %} disabled{% endunless %}>{% if product.selected_or_first_available_variant.available %}Add to cart{% else %}Sold out{% endif %}</button>
+        {{ form | payment_button }}
+      {% endform %}
+      {% if section.settings.show_shipping_note %}<p class="muted">Secure checkout. Shipping and taxes calculated at checkout.</p>{% endif %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{"name":"Main product","settings":[{"type":"checkbox","id":"show_shipping_note","label":"Show shipping note","default":true}]}
+{% endschema %}
