@@ -1,1 +1,82 @@
-{"sections":{"announcement":{"type":"announcement-bar","settings":{"show_announcement":true,"text":"COMPLIMENTARY SHIPPING ON ORDERS OVER $100","link_label":"Shop now"}},"hero":{"type":"hero","settings":{"eyebrow":"THE NEW MENSWEAR EDIT","heading":"Made for the everyday.","description":"Considered essentials. Elevated fits. Effortless style.","button_label":"Shop the collection"}},"featured":{"type":"featured-collection","settings":{"eyebrow":"CURATED FOR YOU","heading":"The essentials","products_to_show":4,"columns":"4"}}},"order":["announcement","hero","featured"]}
+{
+  "sections": {
+    "announcement": {
+      "type": "announcement-bar",
+      "settings": {
+        "show_announcement": true,
+        "text": "COMPLIMENTARY SHIPPING ON ORDERS OVER $100",
+        "link_label": "Shop now"
+      }
+    },
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "THE NEW MENSWEAR EDIT",
+        "heading": "Made for the everyday.",
+        "description": "Considered essentials. Elevated fits. Effortless style.",
+        "button_label": "Shop the collection"
+      }
+    },
+    "featured": {
+      "type": "featured-collection",
+      "settings": {
+        "eyebrow": "CURATED FOR YOU",
+        "heading": "The essentials",
+        "products_to_show": 4,
+        "columns": "4"
+      }
+    },
+    "image_story": {
+      "type": "image-with-text",
+      "settings": {
+        "eyebrow": "THE FABRICA STANDARD",
+        "heading": "Less, but better.",
+        "body": "<p>Build a wardrobe around considered essentials, confident fits and versatile pieces made for everyday wear.</p>",
+        "button_label": "Discover the collection",
+        "color_scheme": "light",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "enable_animation": true
+      }
+    },
+    "video_story": {
+      "type": "video-hero",
+      "settings": {
+        "eyebrow": "INSIDE THE EDIT",
+        "heading": "Details make the difference.",
+        "body": "<p>Explore the textures, silhouettes and thoughtful details behind the FABRICA look.</p>",
+        "button_label": "Shop the edit",
+        "color_scheme": "dark",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "enable_animation": true,
+        "autoplay": true,
+        "loop": true,
+        "show_controls": false
+      }
+    },
+    "newsletter": {
+      "type": "newsletter-signup",
+      "settings": {
+        "eyebrow": "THE FABRICA LETTER",
+        "heading": "Good style. Straight to your inbox.",
+        "body": "<p>Sign up for new arrivals, considered edits and exclusive updates.</p>",
+        "button_label": "Sign me up",
+        "color_scheme": "charcoal",
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "enable_animation": true,
+        "success_message": "Thank you for subscribing.",
+        "email_label": "Email address"
+      }
+    }
+  },
+  "order": [
+    "announcement",
+    "hero",
+    "featured",
+    "image_story",
+    "video_story",
+    "newsletter"
+  ]
+}
