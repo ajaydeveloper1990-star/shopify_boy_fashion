@@ -1,0 +1,14 @@
+<footer class="site-footer">
+  <div class="page-width">
+    <div class="footer-grid">
+      <div><a class="brand" href="{{ routes.root_url }}">{{ settings.brand_name | default: shop.name | escape }}</a><p class="footer-copy">{{ section.settings.brand_message | escape }}</p></div>
+      <div><strong class="eyebrow">Explore</strong><ul class="footer-links">{% for link in section.settings.menu.links %}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}</ul></div>
+      <div><strong class="eyebrow">Customer care</strong><ul class="footer-links">{% if shop.policies.privacy_policy %}<li><a href="{{ shop.policies.privacy_policy.url }}">Privacy policy</a></li>{% endif %}{% if shop.policies.refund_policy %}<li><a href="{{ shop.policies.refund_policy.url }}">Returns & refunds</a></li>{% endif %}{% if shop.policies.shipping_policy %}<li><a href="{{ shop.policies.shipping_policy.url }}">Shipping</a></li>{% endif %}<li><a href="{{ routes.contact_url }}">Contact</a></li></ul></div>
+      <div><strong class="eyebrow">Stay in the loop</strong><p class="footer-copy">New arrivals, considered edits, and updates.</p>{% form 'customer', class: 'footer-newsletter' %}<input type="hidden" name="contact[tags]" value="newsletter"><label class="visually-hidden" for="FooterEmail">Email address</label><input id="FooterEmail" type="email" name="contact[email]" placeholder="Email address" required autocomplete="email"><button class="button button--light" type="submit">Join</button>{% if form.posted_successfully? %}<p role="status">Thanks for subscribing.</p>{% endif %}{% if form.errors %}<div role="alert">{{ form.errors | default_errors }}</div>{% endif %}{% endform %}</div>
+    </div>
+    <div class="footer-bottom"><span class="footer-copy">© {{ 'now' | date: '%Y' }} {{ shop.name | escape }}</span><span class="footer-copy">{{ powered_by_link }}</span></div>
+  </div>
+</footer>
+{% schema %}
+{"name":"Footer","settings":[{"type":"textarea","id":"brand_message","label":"Brand message","default":"Everyday pieces. Thoughtfully designed. Made to be worn on repeat."},{"type":"link_list","id":"menu","label":"Footer menu","default":"footer"}]}
+{% endschema %}
