@@ -99,3 +99,8 @@ This repository is a theme starter implementation, not a claim that a live store
 
 ## License
 No license has been specified. Add a license before redistributing this theme.
+
+
+## Expanded Section Library
+
+The repository now includes 56 additional section presets organized into **Banners, Collections, Forms, Layout, Products, Storytelling, and Text** (8 per category). See [SECTION-LIBRARY.md](SECTION-LIBRARY.md) for the full inventory, setup notes, and current functionality boundaries. Shared responsive styles and progressive enhancement are in `assets/fabrica-section-library.css` and `assets/fabrica-section-library.js`.
