@@ -1,0 +1,2 @@
+/* Lightweight progressive enhancement; core sections work without JavaScript. */
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.fab-section').forEach(function(section){section.querySelectorAll('button').forEach(function(button){if(!button.textContent.trim()&&!button.hasAttribute('aria-label'))button.setAttribute('aria-label','Section action')})})});
