@@ -1,0 +1,1 @@
+{"type":"header","name":"Header group","sections":{"announcement":{"type":"announcement-bar","settings":{"show_announcement":true,"text":"COMPLIMENTARY SHIPPING ON ORDERS OVER $100","link_label":"Shop now"}},"header":{"type":"header","settings":{"menu":"main-menu"}}},"order":["announcement","header"]}
