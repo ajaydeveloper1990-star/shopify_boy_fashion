@@ -1,0 +1,12 @@
+<section class="hero">
+  {% if section.settings.image != blank %}<div class="hero-media">{{ section.settings.image | image_url: width: 2400 | image_tag: widths: '750,1100,1500,2000,2400', sizes: '100vw', loading: 'eager', fetchpriority: 'high', alt: section.settings.image.alt | escape }}</div>{% endif %}
+  <div class="page-width hero-content">
+    {% if section.settings.eyebrow != blank %}<p class="eyebrow">{{ section.settings.eyebrow | escape }}</p>{% endif %}
+    <h1 class="heading-xl">{{ section.settings.heading | escape | newline_to_br }}</h1>
+    {% if section.settings.description != blank %}<p>{{ section.settings.description | escape }}</p>{% endif %}
+    {% if section.settings.button_label != blank %}<a class="button button--light" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label | escape }}</a>{% endif %}
+  </div>
+</section>
+{% schema %}
+{"name":"Hero","settings":[{"type":"image_picker","id":"image","label":"Hero image"},{"type":"text","id":"eyebrow","label":"Eyebrow","default":"THE NEW MENSWEAR EDIT"},{"type":"textarea","id":"heading","label":"Heading","default":"Made for the everyday."},{"type":"textarea","id":"description","label":"Description","default":"Considered essentials. Elevated fits. Effortless style."},{"type":"text","id":"button_label","label":"Button label","default":"Shop the collection"},{"type":"url","id":"button_link","label":"Button link"}],"presets":[{"name":"Hero"}]}
+{% endschema %}
